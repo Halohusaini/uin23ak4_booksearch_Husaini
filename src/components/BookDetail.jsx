@@ -22,7 +22,12 @@ const BookDetail = () => {
   return (
     <div>
       <h2>{bookDetails.title}</h2>
-      {/* Add more details as needed */}
+      <p>Author: {bookDetails.authors?.map(author => author.name).join(", ")}</p>
+      <p>First Published: {bookDetails.first_publish_year}</p>
+      <p>Description: {bookDetails.description}</p>
+      <p>Number of Pages: {bookDetails.number_of_pages}</p>
+      <p>ISBN: {bookDetails.isbn?.join(", ")}</p>
+      
     </div>
   );
 };
