@@ -8,12 +8,12 @@ import BookDetail from "./components/BookDetail";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  
 
-  useEffect(() => {
-    const fetchBooks = async () => {
+  
+    const fetchBooks = async (query) => {
       try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(searchTerm) || 'James Bond'}`);
+        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         setBooks(data.docs);
@@ -23,10 +23,10 @@ function App() {
     };
 
 
-    if (!searchTerm || searchTerm.length > 2){
-      fetchBooks();
+    const handleSearchSumbit = (query) => {
+      fetchBooks(query);
     }
-  }, [searchTerm]);
+    
 
   return (
     <Router>
@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-            <Search onSearchChange={setSearchTerm} />
+            <Search onSearchChange={handleSearchSumbit} />
             <BookList books={books} />
             </>
           } />
