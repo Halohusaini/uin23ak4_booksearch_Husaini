@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './styles/main.scss'
 
 import Layout from "./components/Layout";
 import Search from "./components/Search";
