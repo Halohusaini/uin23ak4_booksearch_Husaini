@@ -9,33 +9,36 @@ import BookDetail from "./components/BookDetail";
 
 function App() {
   const [books, setBooks] = useState([]);
-  
+  const limit = 2;
+  const page = 1;
 
-  
-    const fetchBooks = async (query) => {
-      try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        setBooks(data.docs);
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    };
-
-
-    const handleSearchSumbit = (query) => {
-      fetchBooks(query);
+  const fetchBooks = async (query) => {
+    try {
+      const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      setBooks(data.docs);
+    } catch (error) {
+      console.error('There has been a problem with your fetch operation:', error);
     }
+  };
+
+  useEffect(() => {
     
+    fetchBooks("James Bond");
+  }, []);
+
+  const handleSearchSubmit = (query) => {
+    fetchBooks(query);
+  }
 
   return (
     <Router>
-      <Layout>
+      <Layout onSearchChange={handleSearchSubmit}>
         <Routes>
           <Route path="/" element={
             <>
-            <Search onSearchChange={handleSearchSumbit} />
+            
             <BookList books={books} />
             </>
           } />

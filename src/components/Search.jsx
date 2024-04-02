@@ -21,7 +21,7 @@ export default function Search({ onSearchChange }) {
         value={inputValue}
         onChange={handleInputChange}
       />
-      <button type="sumbit">Search</button>
+      <button type="sumbit">Søk</button>
     </form>
   );
 }

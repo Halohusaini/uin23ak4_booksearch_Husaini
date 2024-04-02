@@ -7,6 +7,7 @@ export default function BookCard({ book }) {
 
     const amazonSearchUrl = `https://www.amazon.com/s?k=0395082544${amazon_id}`;
     
+    
     return (
         <div>
             <img src={coverUrl} alt={title} style={{width: '100px', height: '150px'}}/>
