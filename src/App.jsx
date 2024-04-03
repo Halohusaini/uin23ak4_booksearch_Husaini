@@ -4,7 +4,7 @@ import './styles/main.scss'
 
 import Layout from "./components/Layout";
 import Search from "./components/Search";
-import BookList from "./components/BookList";
+import BookList from "./components/SearchResults";
 import BookDetail from "./components/BookDetail";
 
 function App() {
