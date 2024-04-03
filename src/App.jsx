@@ -14,7 +14,7 @@ function App() {
 
   const fetchBooks = async (query) => {
     try {
-      const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}`);
+      const response = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(query)}&page=${page}&limit=${limit}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setBooks(data.docs);
