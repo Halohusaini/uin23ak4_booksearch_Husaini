@@ -9,7 +9,7 @@ import BookDetail from "./components/BookDetail";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const limit = 3;
+  const limit = 10;
   const page = 1;
 
   const fetchBooks = async (query) => {
