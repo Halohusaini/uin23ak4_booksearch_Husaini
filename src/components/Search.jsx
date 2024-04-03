@@ -11,7 +11,12 @@ export default function Search({ onSearchChange }) {
 
     const handleSumbit = (e) => {
         e.preventDefault();
-        onSearchChange(inputValue);
+        if (inputValue.length >= 3) {
+          onSearchChange(inputValue);
+        } else {
+          alert("Skriv minst 3 ord for å søke opp bøker")
+        }
+        
     };
 
     console.log(onSearchChange)

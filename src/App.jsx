@@ -4,7 +4,7 @@ import './styles/main.scss'
 
 import Layout from "./components/Layout";
 import Search from "./components/Search";
-import BookList from "./components/SearchResults";
+import SearchResults from "./components/SearchResults";
 import BookDetail from "./components/BookDetail";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           <Route path="/" element={
             <>
             
-            <BookList books={books} />
+            <SearchResults books={books} />
             </>
           } />
           <Route path="/book/:bookId" element={<BookDetail />} />
