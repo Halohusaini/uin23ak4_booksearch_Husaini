@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function BookCard({ book }) {
-    const { key, title, author_name, first_publish_year, cover_i, amazon_id } = book;
+    const { key, title, author_name, first_publish_year, cover_i, isbn } = book;
     const coverUrl = cover_i ? `https://covers.openlibrary.org/b/id/${cover_i}-M.jpg` : 'https://via.placeholder.com/150'
 
-    const amazonSearchUrl = `https://www.amazon.com/s?k=0395082544${amazon_id}`;
+    const amazonSearchUrl = isbn && isbn.length > 0 ? `https://www.amazon.com/s?k=${isbn[0]}` : null;
     
     
     return (

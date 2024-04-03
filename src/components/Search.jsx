@@ -13,6 +13,8 @@ export default function Search({ onSearchChange }) {
         e.preventDefault();
         onSearchChange(inputValue);
     };
+
+    console.log(onSearchChange)
   return (
     <form onSubmit={handleSumbit}>
       <input

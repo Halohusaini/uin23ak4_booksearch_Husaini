@@ -29,7 +29,7 @@ body {
   background-color: $background-color;
   color: $text-color;
   line-height: 1.6;
-  flex: 1; /* Flex grow to fill available space */
+  flex: 1; 
 }
 
 img {
@@ -45,17 +45,17 @@ a {
    }
 }
 
-/* Centering the main content */
+
 main {
   flex-grow: 1;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; 
+  align-items: center; 
   padding: 20px;
   background-color: $background-color;
 }
 
-/* Layout Styles */
+
 .header {
   background-color: $primary-color;
   color: white;
@@ -70,12 +70,12 @@ main {
   padding: 10px 0;
 }
 
-/* Component Styles */
+
 .search-input {
   width: 100%;
-  max-width: 500px; /* Makes the search bar not too wide */
+  max-width: 500px; 
   padding: 15px 10px;
-  margin: 20px auto; /* Center the search bar */
+  margin: 20px auto; 
   border: 1px solid $light-gray;
   border-radius: $border-radius;
   background-color: #ececec;
@@ -86,8 +86,8 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   width: 100%;
-  max-width: 1200px; /* Max width to prevent overly stretched items */
-  margin: auto; /* Center the grid */
+  max-width: 1200px; 
+  margin: auto; 
 }
 
 .book-card {
@@ -100,12 +100,12 @@ main {
   transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out;
 
   &:hover {
-    transform: translateY(-5px); /* Adds a lift effect */
+    transform: translateY(-5px); 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 }
 
-/* Responsive Design */
+
 @media only screen and (max-width: 600px) {
   .book-list {
     grid-template-columns: 1fr;
