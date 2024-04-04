@@ -3,18 +3,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './styles/main.scss'
 
 import Layout from "./components/Layout";
-import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
 import BookDetail from "./components/BookDetail";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const limit = 10;
-  const page = 1;
+  
 
   const fetchBooks = async (query) => {
     try {
-      const response = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(query)}&page=${page}&limit=${limit}`);
+      const response = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(query)}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setBooks(data.docs);

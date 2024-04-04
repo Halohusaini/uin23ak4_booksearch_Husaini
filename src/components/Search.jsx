@@ -14,7 +14,7 @@ export default function Search({ onSearchChange }) {
         if (inputValue.length >= 3) {
           onSearchChange(inputValue);
         } else {
-          alert("Skriv minst 3 ord for å søke opp bøker")
+          alert("Skriv minst 3 bokstaver for å søke opp bøker")
         }
         
     };
@@ -24,7 +24,7 @@ export default function Search({ onSearchChange }) {
     <form onSubmit={handleSumbit}>
       <input
         type="text"
-        placeholder="Search books..."
+        placeholder="Søk i bøker..."
         value={inputValue}
         onChange={handleInputChange}
       />
